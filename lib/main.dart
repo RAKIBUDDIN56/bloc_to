@@ -1,4 +1,5 @@
 import 'package:bloc_todo/modules/presentation/cubit/home_cubit.dart';
+import 'package:bloc_todo/modules/presentation/entry_cubit/entry_cubit.dart';
 import 'package:bloc_todo/modules/presentation/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,6 +18,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<HomeCubit>(
           create: (context) => HomeCubit()..fetchData(),
+        ),
+        BlocProvider<EntryCubit>(
+          create: (context) => EntryCubit(),
         ),
       ],
       child: const MaterialApp(
